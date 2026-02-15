@@ -22,7 +22,14 @@ export default function Speakers() {
   return (
     <section className="py-20 container mx-auto px-4 text-white">
       <h2 className="text-4xl font-bold mb-12 text-center">
-        PALESTRANTES & <span className="text-pink-500">CONVIDADOS</span>
+        PALESTRANTES & <span className="bg-gradient-to-r 
+    from-purple-500 
+    via-pink-500 
+    to-blue-500 
+    bg-[length:200%_200%]
+    bg-clip-text 
+    text-transparent 
+    animate-gradient">CONVIDADOS</span>
       </h2>
       <div className="grid md:grid-cols-3 gap-8">
         {SPEAKERS.map((speaker, idx) => (
