@@ -35,7 +35,7 @@ export default function Speakers() {
         {SPEAKERS.map((speaker, idx) => (
           <div
             key={idx}
-            className="group relative overflow-hidden rounded-xl bg-zinc-900 border border-white/5"
+            className="group relative overflow-hidden rounded-xl bg-zinc-900 border border-white/5 transition-all duration-300 hover:scale-105 transform hover:border-purple-500 hover:shadow-[0_0_28px_rgba(168,85,247,0.55)]"
           >
             <div className="h-64 bg-zinc-800 relative">
               <div className="w-full h-full flex items-center justify-center text-zinc-600 bg-zinc-800">
