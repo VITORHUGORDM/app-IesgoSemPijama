@@ -34,7 +34,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-black font-sans selection:bg-purple-500 selection:text-white">
-      {/* Header & Cart Management */}
+      {/* Cabeçalho e Gerenciamento do Carrinho */}
       <Header cartCount={cart.length} onOpenCart={() => setCartOpen(true)} />
       <CartSidebar
         isOpen={cartOpen}
@@ -42,7 +42,7 @@ export default function Home() {
         cart={cart}
         onRemoveItem={removeFromCart}
       />
-      {/* Page Content */}
+      {/* Conteúdo da Página */}
       <Hero />
       <InfoCards />
       <Countdown />
