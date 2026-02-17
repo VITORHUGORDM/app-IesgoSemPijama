@@ -7,6 +7,7 @@ import Hero from "../app/componentes/Hero";
 import InfoCards from "../app/componentes/InfoCards";
 import Countdown from "../app/componentes/Countdown";
 import Purpose from "../app/componentes/Purpose";
+import History from "../app/componentes/History";
 import Speakers from "../app/componentes/Speakers";
 import Schedule from "../app/componentes/Schedule";
 import Store from "../app/componentes/Store";
@@ -47,6 +48,7 @@ export default function Home() {
       <InfoCards />
       <Countdown />
       <Purpose />
+      <History />
       <Speakers />
       <Schedule />
       <Store onAddToCart={addToCart} />

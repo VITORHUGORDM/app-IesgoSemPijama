@@ -28,7 +28,7 @@ export default function Schedule() {
     <section id="agenda" className="py-20 bg-zinc-950 text-white">
       <div className="container mx-auto px-4 max-w-4xl">
         <h2 className="text-4xl font-bold mb-8 text-center">
-          TIMELINE <span className="text-purple-500">2026</span>
+          TIMELINE <span className="bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 bg-[length:200%_200%] bg-clip-text text-transparent animate-gradient">2026</span>
         </h2>
 
         <div className="flex justify-center mb-12 space-x-4">

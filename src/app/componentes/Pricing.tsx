@@ -5,7 +5,7 @@ export default function Pricing() {
     <section id="ingressos" className="py-20 bg-zinc-950 text-white">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold mb-4 text-center">
-          GARANTA SUA <span className="text-pink-500">VAGA</span>
+          GARANTA SUA <span className="bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 bg-[length:200%_200%] bg-clip-text text-transparent animate-gradient">VAGA</span>
         </h2>
         <p className="text-center text-gray-400 mb-12">
           As vagas são limitadas. Escolha a melhor experiência para você.
