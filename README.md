@@ -39,6 +39,7 @@ npm run dev
 Estrutura do Projeto
 
 📦 app-IesgoSemPijama
+
 ┣ 📂 public/ # Arquivos estáticos (imagens, fontes, etc.)
 
 ┣ 📂 app/ # Estrutura principal do Next.js
