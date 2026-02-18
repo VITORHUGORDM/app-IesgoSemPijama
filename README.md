@@ -1,6 +1,6 @@
 WebApp da Iesgo Sem Pijama
 
-Este projeto é um aplicativo web desenvolvido com Next.js e TypeScript, destinado a auxiliar o curso de farmacia com seus pacientes.
+Este projeto é um aplicativo web desenvolvido com Next.js e TypeScript, destinado a um evento que sera feito na iesgo.
 Repositório Git
 
 O código-fonte deste projeto está hospedado no GitHub: https://github.com/Lads-iesgo/webapp-farmacia.git
@@ -37,7 +37,7 @@ npm run dev
 
 Estrutura do Projeto
 
-📦 webapp-farmacia
+📦 app-IesgoSemPijama
 ┣ 📂 public/ # Arquivos estáticos (imagens, fontes, etc.)
 
 ┣ 📂 app/ # Estrutura principal do Next.js
