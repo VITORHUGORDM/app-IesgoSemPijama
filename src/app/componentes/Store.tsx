@@ -11,19 +11,19 @@ interface Product {
 const PRODUCTS: Product[] = [
   {
     id: 1,
-    name: "Boné Classic Tech",
+    name: "Camiseta IESGo 2026",
     price: 45.0,
     image: "/api/placeholder/200/200",
   },
   {
     id: 2,
-    name: "Moletom Wool Dev",
+    name: "Produto Aleatorio iesgo",
     price: 120.0,
     image: "/api/placeholder/200/200",
   },
   {
     id: 3,
-    name: "Cadeira Ergonomica",
+    name: "Produto Exclusivo 2026",
     price: 850.0,
     image: "/api/placeholder/200/200",
   },
@@ -39,7 +39,7 @@ export default function Store({
       <div className="flex justify-between items-end mb-12">
         <div>
           <h2 className="text-4xl font-bold text-white">
-            PIJAMA <span className="text-purple-500">STORE</span>
+            PIJAMA <span className="text-purple-500">LOJA</span>
           </h2>
           <p className="text-gray-400 mt-2">
             Garanta os itens exclusivos da edição 2026.

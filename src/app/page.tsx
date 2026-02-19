@@ -7,6 +7,7 @@ import Hero from "../app/componentes/Hero";
 import InfoCards from "../app/componentes/InfoCards";
 import Countdown from "../app/componentes/Countdown";
 import Purpose from "../app/componentes/Purpose";
+import History from "../app/componentes/History";
 import Speakers from "../app/componentes/Speakers";
 import Schedule from "../app/componentes/Schedule";
 import Store from "../app/componentes/Store";
@@ -34,7 +35,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-black font-sans selection:bg-purple-500 selection:text-white">
-      {/* Header & Cart Management */}
+      {/* Cabeçalho e Gerenciamento do Carrinho */}
       <Header cartCount={cart.length} onOpenCart={() => setCartOpen(true)} />
       <CartSidebar
         isOpen={cartOpen}
@@ -42,11 +43,12 @@ export default function Home() {
         cart={cart}
         onRemoveItem={removeFromCart}
       />
-      {/* Page Content */}
+      {/* Conteúdo da Página */}
       <Hero />
       <InfoCards />
       <Countdown />
       <Purpose />
+      <History />
       <Speakers />
       <Schedule />
       <Store onAddToCart={addToCart} />

@@ -32,29 +32,42 @@ export default function Countdown() {
   }, []);
 
   return (
-    <section className="py-20 text-center container mx-auto">
-      <h3 className="text-2xl font-bold mb-8 uppercase tracking-widest text-gray-400">
-        Faltam:
-      </h3>
-      <div className="flex flex-wrap justify-center gap-4 md:gap-8">
-        {[
-          { label: "DIAS", value: timeLeft.days },
-          { label: "HORAS", value: timeLeft.hours },
-          { label: "MINUTOS", value: timeLeft.minutes },
-          { label: "SEGUNDOS", value: timeLeft.seconds },
-        ].map((item, idx) => (
-          <div
-            key={idx}
-            className="bg-zinc-900 border border-white/10 p-6 rounded-lg w-32 md:w-40 shadow-[0_0_15px_rgba(0,0,0,0.5)]"
-          >
-            <div className="text-4xl md:text-5xl font-mono font-bold text-white mb-2">
-              {String(item.value).padStart(2, "0")}
+    <section className="relative py-20">
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-purple-900/20 via-black/0 to-black/0" />
+      <div className="container mx-auto text-center">
+        <div className="mx-auto mb-10 max-w-2xl">
+          <p className="mb-3 text-xs font-semibold tracking-[0.4em] text-purple-300/80">
+            CONTAGEM REGRESSIVA
+          </p>
+          <h3 className="text-3xl md:text-4xl font-extrabold text-white">
+            Faltam poucos instantes para o grande momento
+          </h3>
+          <p className="mt-3 text-sm md:text-base text-gray-300/80">
+            Prepare-se: a experiência começa em breve.
+          </p>
+        </div>
+        <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+          {[
+            { label: "DIAS", value: timeLeft.days },
+            { label: "HORAS", value: timeLeft.hours },
+            { label: "MINUTOS", value: timeLeft.minutes },
+            { label: "SEGUNDOS", value: timeLeft.seconds },
+          ].map((item, idx) => (
+            <div
+              key={idx}
+              className="group relative w-32 md:w-40 overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.8)] backdrop-blur"
+            >
+              <div className="absolute inset-0 -z-10 bg-gradient-to-br from-purple-500/10 via-transparent to-cyan-400/10 opacity-60" />
+              <div className="text-4xl md:text-5xl font-mono font-bold text-white">
+                {String(item.value).padStart(2, "0")}
+              </div>
+              <div className="mt-2 text-[10px] uppercase tracking-[0.35em] text-purple-300/90">
+                {item.label}
+              </div>
+              <div className="mt-4 h-[2px] w-full rounded-full bg-gradient-to-r from-purple-500/60 via-fuchsia-400/60 to-cyan-400/60 opacity-70" />
             </div>
-            <div className="text-xs text-purple-400 font-bold tracking-wider">
-              {item.label}
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -13,8 +13,7 @@ export default function LocationMap() {
         </p>
       </div>
 
-      <div className="w-full h-[400px] md:h-[500px] relative group">
-        {/* O Overlay é um truque para o mapa não "roubar" o scroll da página quando você passa o mouse por cima rápido */}
+      <div className="w-full h-100 md:h-125 relative group">
         <div className="absolute inset-0 bg-transparent pointer-events-none group-hover:pointer-events-auto z-0" />
 
         <iframe
@@ -26,11 +25,10 @@ export default function LocationMap() {
           marginHeight={0}
           marginWidth={0}
           src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Faculdades%20Integradas%20IESGO%20Formosa%20GO&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-          // ESTE FILTRO ABAIXO É O SEGREDO DO "DARK MODE" NO MAPA
-          className="w-full h-full grayscale invert brightness-[0.8] contrast-[1.2] opacity-80 hover:opacity-100 transition duration-500"
+          className="w-full h-full"
         ></iframe>
 
-        {/* Card Flutuante sobre o mapa */}
+        {/* Card flutuante sobre o mapa */}
         <div className="absolute bottom-4 left-4 right-4 md:left-10 md:bottom-10 md:right-auto bg-zinc-900/90 backdrop-blur border border-purple-500/30 p-6 rounded-xl shadow-2xl max-w-sm">
           <div className="flex items-start gap-4">
             <div className="bg-purple-600 p-3 rounded-full text-white">

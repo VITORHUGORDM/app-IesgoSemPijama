@@ -5,7 +5,7 @@ export default function Pricing() {
     <section id="ingressos" className="py-20 bg-zinc-950 text-white">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold mb-4 text-center">
-          GARANTA SUA <span className="text-pink-500">VAGA</span>
+          GARANTA SUA <span className="bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 bg-[length:200%_200%] bg-clip-text text-transparent animate-gradient">VAGA</span>
         </h2>
         <p className="text-center text-gray-400 mb-12">
           As vagas são limitadas. Escolha a melhor experiência para você.
@@ -14,7 +14,7 @@ export default function Pricing() {
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto items-center">
           {/* Basic */}
           <div className="bg-zinc-900 p-8 rounded-2xl border border-white/10">
-            <h3 className="text-xl font-bold mb-2">STUDENT</h3>
+            <h3 className="text-xl font-bold mb-2">ESTUDANTE</h3>
             <div className="text-4xl font-bold mb-6">R$ 49,90</div>
             <ul className="space-y-4 text-gray-400 text-sm mb-8">
               <li className="flex gap-2">
@@ -40,12 +40,13 @@ export default function Pricing() {
               MAIS VENDIDO
             </div>
             <h3 className="text-xl font-bold mb-2 text-purple-400">
-              PRO EXPERIENCE
+              EXPERIÊNCIA PRO
             </h3>
             <div className="text-4xl font-bold mb-6">R$ 89,90</div>
             <ul className="space-y-4 text-gray-300 text-sm mb-8">
               <li className="flex gap-2">
-                <span className="text-purple-500">✓</span> Tudo do plano Student
+                <span className="text-purple-500">✓</span> Tudo do plano
+                Estudante
               </li>
               <li className="flex gap-2">
                 <span className="text-purple-500">✓</span> Kit Físico Oficial
@@ -69,7 +70,7 @@ export default function Pricing() {
             <div className="text-4xl font-bold mb-6">R$ 199,90</div>
             <ul className="space-y-4 text-gray-400 text-sm mb-8">
               <li className="flex gap-2">
-                <span className="text-green-500">✓</span> 5 ingressos Student
+                <span className="text-green-500">✓</span> 5 ingressos Estudante
               </li>
               <li className="flex gap-2">
                 <span className="text-green-500">✓</span> Desconto progressivo
