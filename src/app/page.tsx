@@ -52,7 +52,7 @@ export default function Home() {
       <Speakers />
       <Schedule />
       <Store onAddToCart={addToCart} />
-      <Pricing />\
+      <Pricing />
       <LocationMap />
       <Faq />
       <Footer />
