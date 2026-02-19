@@ -11,7 +11,7 @@ export default function Hero() {
       <div className="relative z-10 max-w-4xl mx-auto space-y-6 text-white">
         <h1 className="text-5xl md:text-8xl font-black tracking-tighter uppercase mb-4">
           Iesgo Sem{" "}
-          <span className="text-transparent bg-clip-text bg-linear-to-rrom-purple-500 to-pink-500">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">
             PIJAMA
           </span>
         </h1>
@@ -23,7 +23,7 @@ export default function Hero() {
           Mergulhe na energia única do maior evento tech da região.
         </p>
 
-        <button className="bg-linear-to-r from-purple-600 to-pink-600 text-white font-bold py-4 px-10 rounded-full text-lg hover:scale-105 transition transform shadow-[0_0_20px_rgba(168,85,247,0.5)]">
+        <button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold py-4 px-10 rounded-full text-lg hover:scale-105 transition transform shadow-[0_0_20px_rgba(168,85,247,0.5)]">
           INSCREVA-SE AGORA
         </button>
       </div>
