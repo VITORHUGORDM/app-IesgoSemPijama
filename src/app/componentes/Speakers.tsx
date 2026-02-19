@@ -25,11 +25,11 @@ export default function Speakers() {
       <h2 className="text-4xl font-bold mb-12 text-center">
         PALESTRANTES &{" "}
         <span
-          className="bg-gradient-to-r 
+          className="bg-linear-to-r 
     from-purple-500 
     via-pink-500 
     to-blue-500 
-    bg-[length:200%_200%]
+    bg-size-[200%_200%]
     bg-clip-text 
     text-transparent 
     animate-gradient"
@@ -53,7 +53,7 @@ export default function Speakers() {
               <p className="text-purple-400 text-sm mb-4">{speaker.role}</p>
               <div className="border-t border-white/10 pt-4 mt-2">
                 <p className="text-gray-300 text-sm italic">
-                  "{speaker.topic}"
+                  &quot;{speaker.topic}&quot;
                 </p>
               </div>
             </div>

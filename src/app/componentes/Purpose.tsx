@@ -6,7 +6,10 @@ export default function Purpose() {
     <section id="sobre" className="py-20 bg-zinc-950 text-white">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold mb-12 text-center">
-          NOSSO <span className="bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 bg-[length:200%_200% bg-clip-text text-transparent animate-gradient">PROPÓSITO</span>
+          NOSSO{" "}
+          <span className="bg-linear-to-r from-purple-500 via-pink-500 to-blue-500 bg-[length:200%_200% bg-clip-text text-transparent animate-gradient">
+            PROPÓSITO
+          </span>
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
           <div className="bg-zinc-900 p-8 rounded-xl border-l-4 border-purple-500 hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_0_28px_rgba(168,85,247,0.55)]">

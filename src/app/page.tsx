@@ -22,7 +22,7 @@ export default function Home() {
     { id: number; name: string; price: number }[]
   >([]);
 
-  const addToCart = (product: any) => {
+  const addToCart = (product: { id: number; name: string; price: number }) => {
     setCart([...cart, product]);
     setCartOpen(true);
   };

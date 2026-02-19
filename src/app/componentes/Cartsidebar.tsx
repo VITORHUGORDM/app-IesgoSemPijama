@@ -26,7 +26,7 @@ export default function CartSidebar({
   const totalCart = cart.reduce((acc, item) => acc + item.price, 0);
 
   return (
-    <div className="fixed inset-0 z-[60] flex justify-end text-white">
+    <div className="fixed inset-0 z-60 flex justify-end text-white">
       <div className="absolute inset-0 bg-black/50" onClick={onClose} />
       <div className="relative w-full max-w-md bg-zinc-900 h-full p-6 flex flex-col shadow-2xl border-l border-white/10">
         <div className="flex justify-between items-center mb-6">
@@ -67,7 +67,7 @@ export default function CartSidebar({
             <span>Total</span>
             <span>R$ {totalCart.toFixed(2)}</span>
           </div>
-          <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 py-3 rounded-lg font-bold hover:opacity-90 transition">
+          <button className="w-full bg-linear-to-r from-purple-600 to-pink-600 py-3 rounded-lg font-bold hover:opacity-90 transition">
             FINALIZAR COMPRA
           </button>
         </div>
