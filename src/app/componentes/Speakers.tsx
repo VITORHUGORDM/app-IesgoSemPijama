@@ -3,18 +3,19 @@ import React from "react";
 const SPEAKERS = [
   {
     name: "Palestrante 1",
-    role: "Senior AI Engineer @ Google",
+    role: "CEO da Empresa X",
     topic: "O Futuro da IA Generativa",
   },
   {
     name: "Palestrante 2",
-    role: "CTO @ Fintech Unicorn",
-    topic: "Escalando Arquiteturas",
+    role: "Funçao na sua area",
+    topic: "topico a ser apresentado",
   },
   {
     name: "Palestrante 3",
-    role: "Product Designer @ Spotify",
-    topic: "UX Imersivo",
+    role: "Engenheiro de Software",
+    topic:
+      "Como a IA Generativa está Transformando o Desenvolvimento de Software",
   },
 ];
 
@@ -22,14 +23,19 @@ export default function Speakers() {
   return (
     <section className="py-20 container mx-auto px-4 text-white">
       <h2 className="text-4xl font-bold mb-12 text-center">
-        PALESTRANTES & <span className="bg-gradient-to-r 
+        PALESTRANTES &{" "}
+        <span
+          className="bg-gradient-to-r 
     from-purple-500 
     via-pink-500 
     to-blue-500 
     bg-[length:200%_200%]
     bg-clip-text 
     text-transparent 
-    animate-gradient">CONVIDADOS</span>
+    animate-gradient"
+        >
+          CONVIDADOS
+        </span>
       </h2>
       <div className="grid md:grid-cols-3 gap-8">
         {SPEAKERS.map((speaker, idx) => (
