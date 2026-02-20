@@ -5,7 +5,10 @@ export default function Pricing() {
     <section id="ingressos" className="py-20 bg-zinc-950 text-white">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold mb-4 text-center">
-          GARANTA SUA <span className="bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 bg-[length:200%_200%] bg-clip-text text-transparent animate-gradient">VAGA</span>
+          GARANTA SUA{" "}
+          <span className="bg-linear-to-r from-purple-500 via-pink-500 to-blue-500 bg-size-[200%_200%] bg-clip-text text-transparent animate-gradient">
+            VAGA
+          </span>
         </h2>
         <p className="text-center text-gray-400 mb-12">
           As vagas são limitadas. Escolha a melhor experiência para você.
@@ -29,7 +32,7 @@ export default function Pricing() {
                 Digital
               </li>
             </ul>
-            <button className="w-full border border-purple-500 text-purple-400 py-3 rounded-lg font-bold hover:bg-purple-500 hover:text-white transition">
+            <button className="w-full border border-purple-500 text-purple-400 py-3 rounded-lg font-bold hover:bg-purple-500 hover:text-white transition cursor-pointer">
               COMPRAR AGORA
             </button>
           </div>
@@ -59,7 +62,7 @@ export default function Pricing() {
                 <span className="text-purple-500">✓</span> Happy Hour VIP
               </li>
             </ul>
-            <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-3 rounded-lg font-bold hover:opacity-90 transition">
+            <button className="w-full border border-purple-500 text-purple-400 py-3 rounded-lg font-bold hover:bg-purple-500 hover:text-white transition cursor-pointer">
               COMPRAR AGORA
             </button>
           </div>
@@ -80,7 +83,7 @@ export default function Pricing() {
                 Hackathon
               </li>
             </ul>
-            <button className="w-full border border-purple-500 text-purple-400 py-3 rounded-lg font-bold hover:bg-purple-500 hover:text-white transition">
+            <button className="w-full border border-purple-500 text-purple-400 py-3 rounded-lg font-bold hover:bg-purple-500 hover:text-white transition cursor-pointer">
               COMPRAR AGORA
             </button>
           </div>

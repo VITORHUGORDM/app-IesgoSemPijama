@@ -40,7 +40,7 @@ export default function Countdown() {
             CONTAGEM REGRESSIVA
           </p>
           <h3 className="text-3xl md:text-4xl font-extrabold text-white">
-            Faltam poucos instantes para o grande momento
+            Faltam
           </h3>
           <p className="mt-3 text-sm md:text-base text-gray-300/80">
             Prepare-se: a experiência começa em breve.

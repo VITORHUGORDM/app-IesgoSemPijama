@@ -11,7 +11,7 @@ interface Product {
 const PRODUCTS: Product[] = [
   {
     id: 1,
-    name: "Camiseta IESGo 2026",
+    name: "Camiseta IESGO 2026",
     price: 45.0,
     image: "/api/placeholder/200/200",
   },

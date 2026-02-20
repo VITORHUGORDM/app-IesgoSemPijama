@@ -6,7 +6,7 @@ export default function Hero() {
       id="home"
       className="relative pt-32 pb-20 px-4 flex flex-col items-center justify-center text-center min-h-[90vh] bg-[url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2070')] bg-cover bg-center"
     >
-      <div className="absolute inset-0 bg-black/80 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
+      <div className="absolute inset-0 bg-black/80 bg-linear-to-t from-black via-black/80 to-transparent"></div>
 
       <div className="relative z-10 max-w-4xl mx-auto space-y-6 text-white">
         <h1 className="text-5xl md:text-8xl font-black tracking-tighter uppercase mb-4">
@@ -16,7 +16,7 @@ export default function Hero() {
           </span>
         </h1>
         <p className="text-xl md:text-2xl text-purple-200 font-medium tracking-wide">
-          "À NOITE FAZEMOS PROGRAMA"
+          &quot;À NOITE FAZEMOS PROGRAMA&quot;
         </p>
         <p className="text-gray-400 max-w-2xl mx-auto">
           Uma noite intensa dedicada à inovação, tecnologia e criatividade.
