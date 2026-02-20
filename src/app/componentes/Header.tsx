@@ -36,6 +36,9 @@ export default function Header({ cartCount, onOpenCart }: HeaderProps) {
           <a href="#ingressos" className="hover:text-purple-400 transition">
             INSCRIÇÃO
           </a>
+          <a href="#Contato" className="hover:text-purple-400 transition">
+            CONTATO
+          </a>
         </nav>
 
         <div className="flex items-center gap-4 text-white">

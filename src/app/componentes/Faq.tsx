@@ -11,6 +11,14 @@ const FAQS = [
     q: "Haverá certificado?",
     a: "Sim, certificado de 12 horas complementares.",
   },
+  {
+    q: "Menores de idade podem participar?",
+    a: "Sim, menores de idade podem participar desde que tenham autorização dos responsáveis.",
+  },
+  {
+    q: "Tem alimentação no local?",
+    a: "Sim, haverá alimentação durante o evento.",
+  },
 ];
 
 export default function Faq() {

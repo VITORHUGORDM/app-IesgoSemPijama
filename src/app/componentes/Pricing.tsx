@@ -32,7 +32,7 @@ export default function Pricing() {
                 Digital
               </li>
             </ul>
-            <button className="w-full border border-purple-500 text-purple-400 py-3 rounded-lg font-bold hover:bg-purple-500 hover:text-white transition">
+            <button className="w-full border border-purple-500 text-purple-400 py-3 rounded-lg font-bold hover:bg-purple-500 hover:text-white transition cursor-pointer">
               COMPRAR AGORA
             </button>
           </div>
@@ -62,7 +62,7 @@ export default function Pricing() {
                 <span className="text-purple-500">✓</span> Happy Hour VIP
               </li>
             </ul>
-            <button className="w-full bg-linear-to-r from-purple-600 to-pink-600 text-white py-3 rounded-lg font-bold hover:opacity-90 transition">
+            <button className="w-full border border-purple-500 text-purple-400 py-3 rounded-lg font-bold hover:bg-purple-500 hover:text-white transition cursor-pointer">
               COMPRAR AGORA
             </button>
           </div>
@@ -83,7 +83,7 @@ export default function Pricing() {
                 Hackathon
               </li>
             </ul>
-            <button className="w-full border border-purple-500 text-purple-400 py-3 rounded-lg font-bold hover:bg-purple-500 hover:text-white transition">
+            <button className="w-full border border-purple-500 text-purple-400 py-3 rounded-lg font-bold hover:bg-purple-500 hover:text-white transition cursor-pointer">
               COMPRAR AGORA
             </button>
           </div>
