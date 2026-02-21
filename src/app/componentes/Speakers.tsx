@@ -21,7 +21,7 @@ const SPEAKERS = [
 
 export default function Speakers() {
   return (
-    <section className="py-20 container mx-auto px-4 text-white">
+    <section className="py-20 container mx-auto px-4 text-white border-t border-white/5">
       <h2 className="text-4xl font-bold mb-12 text-center">
         PALESTRANTES &{" "}
         <span
@@ -51,7 +51,7 @@ export default function Speakers() {
             <div className="p-6">
               <h3 className="text-xl font-bold text-white">{speaker.name}</h3>
               <p className="text-purple-400 text-sm mb-4">{speaker.role}</p>
-              <div className="border-t border-white/10 pt-4 mt-2">
+              <div className="border-t border-white/5 pt-4 mt-2">
                 <p className="text-gray-300 text-sm italic">
                   &quot;{speaker.topic}&quot;
                 </p>

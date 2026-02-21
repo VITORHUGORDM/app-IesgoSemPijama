@@ -2,7 +2,10 @@ import React from "react";
 
 export default function Pricing() {
   return (
-    <section id="ingressos" className="py-20 bg-zinc-950 text-white">
+    <section
+      id="ingressos"
+      className="py-20 bg-zinc-950 text-white border-t border-white/5"
+    >
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold mb-4 text-center">
           GARANTA SUA{" "}

@@ -10,34 +10,74 @@ interface HeaderProps {
 export default function Header({ cartCount, onOpenCart }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const handleSmoothScroll = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    targetId: string,
+  ) => {
+    event.preventDefault();
+    const section = document.querySelector(targetId);
+
+    if (!section) {
+      return;
+    }
+
+    section.scrollIntoView({ behavior: "smooth", block: "start" });
+    window.history.replaceState(null, "", targetId);
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="text-2xl font-bold tracking-tighter text-white">
           IESGO SEM{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-purple-500 to-pink-500">
             PIJAMA
           </span>
         </div>
 
         <nav className="hidden md:flex space-x-8 text-sm font-medium text-gray-300">
-          <a href="#home" className="hover:text-purple-400 transition">
+          <a
+            href="#home"
+            className="hover:text-purple-400 transition"
+            onClick={(event) => handleSmoothScroll(event, "#home")}
+          >
             HOME
           </a>
-          <a href="#sobre" className="hover:text-purple-400 transition">
+          <a
+            href="#sobre"
+            className="hover:text-purple-400 transition"
+            onClick={(event) => handleSmoothScroll(event, "#sobre")}
+          >
             SOBRE
           </a>
-          <a href="#agenda" className="hover:text-purple-400 transition">
+          <a
+            href="#agenda"
+            className="hover:text-purple-400 transition"
+            onClick={(event) => handleSmoothScroll(event, "#agenda")}
+          >
             PROGRAMAÇÃO
           </a>
-          <a href="#loja" className="hover:text-purple-400 transition">
+          <a
+            href="#loja"
+            className="hover:text-purple-400 transition"
+            onClick={(event) => handleSmoothScroll(event, "#loja")}
+          >
             LOJA
           </a>
-          <a href="#ingressos" className="hover:text-purple-400 transition">
+          <a
+            href="#ingressos"
+            className="hover:text-purple-400 transition"
+            onClick={(event) => handleSmoothScroll(event, "#ingressos")}
+          >
             INSCRIÇÃO
           </a>
-          <a href="#Contato" className="hover:text-purple-400 transition">
-            CONTATO
+          <a
+            href="#contato"
+            className="hover:text-purple-400 transition"
+            onClick={(event) => handleSmoothScroll(event, "#contato")}
+          >
+            FALE CONOSCO
           </a>
         </nav>
 
@@ -67,21 +107,21 @@ export default function Header({ cartCount, onOpenCart }: HeaderProps) {
           <a
             href="#home"
             className="block py-2"
-            onClick={() => setIsMenuOpen(false)}
+            onClick={(event) => handleSmoothScroll(event, "#home")}
           >
             HOME
           </a>
           <a
             href="#agenda"
             className="block py-2"
-            onClick={() => setIsMenuOpen(false)}
+            onClick={(event) => handleSmoothScroll(event, "#agenda")}
           >
             PROGRAMAÇÃO
           </a>
           <a
             href="#ingressos"
             className="block py-2 text-purple-400 font-bold"
-            onClick={() => setIsMenuOpen(false)}
+            onClick={(event) => handleSmoothScroll(event, "#ingressos")}
           >
             GARANTIR VAGA
           </a>

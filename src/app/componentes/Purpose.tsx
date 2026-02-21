@@ -3,7 +3,10 @@ import { Zap, Users, Rocket } from "lucide-react";
 
 export default function Purpose() {
   return (
-    <section id="sobre" className="py-20 bg-zinc-950 text-white">
+    <section
+      id="sobre"
+      className="py-20 bg-zinc-950 text-white border-t border-white/5"
+    >
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold mb-12 text-center">
           NOSSO{" "}
@@ -28,8 +31,8 @@ export default function Purpose() {
               encontram.
             </p>
           </div>
-          <div className="bg-zinc-900 p-8 rounded-xl border-l-4 border-blue-500 hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_0_28px_rgba(59,130,246,0.55)]">
-            <Rocket className="w-12 h-12 text-blue-500 mb-6 bg-blue-500/10 p-2 rounded-lg" />
+          <div className="bg-zinc-900 p-8 rounded-xl border-l-4 border-cyan-400 hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_0_28px_rgba(34,211,238,0.45)]">
+            <Rocket className="w-12 h-12 text-cyan-400 mb-6 bg-cyan-400/10 p-2 rounded-lg" />
             <h3 className="text-2xl font-bold mb-4">Evolução</h3>
             <p className="text-gray-400 leading-relaxed">
               Impulsionar carreiras fornecendo ferramentas práticas e insights

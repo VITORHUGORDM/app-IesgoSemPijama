@@ -7,7 +7,10 @@ import Hero from "../app/componentes/Hero";
 import InfoCards from "../app/componentes/InfoCards";
 import Countdown from "../app/componentes/Countdown";
 import Purpose from "../app/componentes/Purpose";
+import EditionThemes from "../app/componentes/EditionThemes";
 import History from "../app/componentes/History";
+import Gallery from "../app/componentes/Gallery";
+import VipGroup from "../app/componentes/VipGroup";
 import Speakers from "../app/componentes/Speakers";
 import Schedule from "../app/componentes/Schedule";
 import Store from "../app/componentes/Store";
@@ -15,6 +18,8 @@ import Pricing from "../app/componentes/Pricing";
 import Faq from "../app/componentes/Faq";
 import Footer from "../app/componentes/Footer";
 import LocationMap from "../app/componentes/LocationMap";
+import Partners from "../app/componentes/Partners";
+import Contact from "../app/componentes/Contact";
 
 export default function Home() {
   const [cartOpen, setCartOpen] = useState(false);
@@ -48,13 +53,18 @@ export default function Home() {
       <InfoCards />
       <Countdown />
       <Purpose />
+      <EditionThemes />
       <History />
+      <Gallery />
       <Speakers />
       <Schedule />
       <Store onAddToCart={addToCart} />
       <Pricing />
+      <VipGroup />
+      <Partners />
       <LocationMap />
       <Faq />
+      <Contact />
       <Footer />
     </main>
   );

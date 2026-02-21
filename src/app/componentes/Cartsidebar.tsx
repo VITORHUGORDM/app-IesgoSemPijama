@@ -62,7 +62,7 @@ export default function CartSidebar({
           )}
         </div>
 
-        <div className="pt-6 border-t border-white/10">
+        <div className="pt-6 border-t border-white/5">
           <div className="flex justify-between text-xl font-bold mb-4">
             <span>Total</span>
             <span>R$ {totalCart.toFixed(2)}</span>

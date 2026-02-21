@@ -35,7 +35,10 @@ export default function Store({
   onAddToCart: (p: Product) => void;
 }) {
   return (
-    <section id="loja" className="py-20 container mx-auto px-4 text-white">
+    <section
+      id="loja"
+      className="py-20 container mx-auto px-4 text-white border-t border-white/5"
+    >
       <div className="flex justify-between items-end mb-12">
         <div>
           <h2 className="text-4xl font-bold text-white">
@@ -56,7 +59,7 @@ export default function Store({
             key={prod.id}
             className="bg-zinc-900 rounded-xl overflow-hidden border border-white/5 hover:border-white/20 transition group"
           >
-            <div className="h-64 bg-zinc-800 flex items-center justify-center text-gray-600">
+            <div className="h-64 bg-zinc-800 flex items-center justify-center text-gray-500">
               IMAGEM DO PRODUTO
             </div>
             <div className="p-6">
@@ -72,7 +75,7 @@ export default function Store({
                 </span>
                 <button
                   onClick={() => onAddToCart(prod)}
-                  className="bg-white text-black px-4 py-2 rounded-lg font-bold hover:bg-gray-200 transition text-sm flex gap-2 items-center"
+                  className="bg-white text-black px-4 py-2 rounded-lg font-bold hover:bg-gray-300 transition text-sm flex gap-2 items-center"
                 >
                   <ShoppingCart size={16} /> Add
                 </button>

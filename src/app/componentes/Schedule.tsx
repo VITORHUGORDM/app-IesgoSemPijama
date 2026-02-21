@@ -25,7 +25,10 @@ export default function Schedule() {
   const [activeTab, setActiveTab] = useState<"sabado" | "domingo">("sabado");
 
   return (
-    <section id="agenda" className="py-20 bg-zinc-950 text-white">
+    <section
+      id="agenda"
+      className="py-20 bg-zinc-950 text-white border-t border-white/5"
+    >
       <div className="container mx-auto px-4 max-w-4xl">
         <h2 className="text-4xl font-bold mb-8 text-center">
           TIMELINE{" "}

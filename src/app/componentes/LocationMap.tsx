@@ -3,7 +3,10 @@ import { MapPin, ExternalLink } from "lucide-react";
 
 export default function LocationMap() {
   return (
-    <section id="local" className="py-20 bg-zinc-950 relative overflow-hidden">
+    <section
+      id="local"
+      className="py-20 bg-zinc-950 relative overflow-hidden border-t border-white/5"
+    >
       <div className="container mx-auto px-4 mb-12 text-center relative z-10">
         <h2 className="text-4xl font-bold mb-4 text-white">
           COMO <span className="text-purple-500">CHEGAR</span>
