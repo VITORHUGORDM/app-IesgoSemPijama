@@ -92,12 +92,20 @@ export type Inscricao = {
 };
 
 function isKvConfigured() {
-  return Boolean(process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN);
+  return Boolean(getKvUrl() && getKvToken());
+}
+
+function getKvUrl() {
+  return process.env.KV_REST_API_URL ?? process.env.UPSTASH_REDIS_REST_URL;
+}
+
+function getKvToken() {
+  return process.env.KV_REST_API_TOKEN ?? process.env.UPSTASH_REDIS_REST_TOKEN;
 }
 
 async function runKvCommand(command: Array<string | number>) {
-  const url = process.env.KV_REST_API_URL;
-  const token = process.env.KV_REST_API_TOKEN;
+  const url = getKvUrl();
+  const token = getKvToken();
 
   if (!url || !token) {
     throw new Error("KV não configurado.");
