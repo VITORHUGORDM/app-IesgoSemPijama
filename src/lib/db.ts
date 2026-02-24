@@ -1,4 +1,5 @@
 import fs from "node:fs";
+import os from "node:os";
 import path from "node:path";
 import Database from "better-sqlite3";
 
@@ -10,39 +11,52 @@ type GlobalWithDb = typeof globalThis & {
 
 const globalForDb = globalThis as GlobalWithDb;
 
+function getTmpDir() {
+  return (
+    process.env.TMPDIR ?? process.env.TEMP ?? process.env.TMP ?? os.tmpdir()
+  );
+}
+
+function ensureDir(dirPath: string) {
+  fs.mkdirSync(dirPath, { recursive: true });
+  fs.accessSync(dirPath, fs.constants.W_OK);
+}
+
 function getWritableDbPath() {
   const fileName = "inscricoes.db";
 
   if (process.env.INSCRICOES_DB_PATH) {
-    const customPath = process.env.INSCRICOES_DB_PATH;
-    const customDir = path.dirname(customPath);
-    fs.mkdirSync(customDir, { recursive: true });
+    try {
+      const customPath = process.env.INSCRICOES_DB_PATH;
+      const customDir = path.dirname(customPath);
 
-    return customPath;
+      ensureDir(customDir);
+
+      return customPath;
+    } catch {
+      // fallback para os próximos caminhos
+    }
   }
 
   const localDataDir = path.join(process.cwd(), "data");
 
   try {
-    fs.mkdirSync(localDataDir, { recursive: true });
+    ensureDir(localDataDir);
 
     return path.join(localDataDir, fileName);
   } catch {
-    const tmpDir =
-      process.env.TMPDIR ?? process.env.TEMP ?? process.env.TMP ?? "/tmp";
+    const tmpDir = getTmpDir();
 
-    fs.mkdirSync(tmpDir, { recursive: true });
+    ensureDir(tmpDir);
 
     return path.join(tmpDir, fileName);
   }
 }
 
-function getDatabase() {
-  if (!globalForDb.__inscricaoDb) {
-    const dbPath = getWritableDbPath();
-    const db = new Database(dbPath);
+function initializeDatabase(dbPath: string) {
+  const db = new Database(dbPath);
 
-    db.exec(`
+  db.exec(`
       CREATE TABLE IF NOT EXISTS inscricoes (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         nome TEXT NOT NULL,
@@ -51,7 +65,20 @@ function getDatabase() {
       )
     `);
 
-    globalForDb.__inscricaoDb = db;
+  return db;
+}
+
+function getDatabase() {
+  if (!globalForDb.__inscricaoDb) {
+    const dbPath = getWritableDbPath();
+
+    try {
+      globalForDb.__inscricaoDb = initializeDatabase(dbPath);
+    } catch {
+      const fallbackPath = path.join(getTmpDir(), "inscricoes.db");
+      ensureDir(path.dirname(fallbackPath));
+      globalForDb.__inscricaoDb = initializeDatabase(fallbackPath);
+    }
   }
 
   return globalForDb.__inscricaoDb;

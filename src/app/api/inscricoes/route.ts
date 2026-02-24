@@ -47,10 +47,15 @@ export async function POST(request: Request) {
       mensagem: "Inscrição registrada com sucesso.",
     });
   } catch (error) {
-    const mensagem =
-      error instanceof Error && error.message.includes("UNIQUE")
-        ? "Este e-mail já está inscrito."
-        : "Não foi possível registrar a inscrição.";
+    const mensagemErro =
+      error instanceof Error ? error.message.toLowerCase() : "";
+    const emailDuplicado =
+      mensagemErro.includes("unique") ||
+      mensagemErro.includes("constraint failed");
+
+    const mensagem = emailDuplicado
+      ? "Este e-mail já está inscrito."
+      : "Não foi possível registrar a inscrição.";
 
     const status = mensagem.includes("já está") ? 409 : 500;
 
