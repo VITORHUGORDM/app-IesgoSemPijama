@@ -2,8 +2,8 @@ import { listarInscricoes } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
 
-export default function AdminInscricoesPage() {
-  const inscricoes = listarInscricoes();
+export default async function AdminInscricoesPage() {
+  const inscricoes = await listarInscricoes();
 
   return (
     <main className="min-h-screen bg-black text-white px-4 py-10">

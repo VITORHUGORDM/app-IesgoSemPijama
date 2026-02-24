@@ -7,7 +7,7 @@ function isEmailValido(email: string) {
 
 export async function GET() {
   try {
-    const inscricoes = listarInscricoes();
+    const inscricoes = await listarInscricoes();
 
     return NextResponse.json({
       total: inscricoes.length,
@@ -40,7 +40,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ erro: "E-mail inválido." }, { status: 400 });
     }
 
-    criarInscricao(nome, email);
+    await criarInscricao(nome, email);
 
     return NextResponse.json({
       sucesso: true,
