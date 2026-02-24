@@ -10,15 +10,36 @@ type GlobalWithDb = typeof globalThis & {
 
 const globalForDb = globalThis as GlobalWithDb;
 
+function getWritableDbPath() {
+  const fileName = "inscricoes.db";
+
+  if (process.env.INSCRICOES_DB_PATH) {
+    const customPath = process.env.INSCRICOES_DB_PATH;
+    const customDir = path.dirname(customPath);
+    fs.mkdirSync(customDir, { recursive: true });
+
+    return customPath;
+  }
+
+  const localDataDir = path.join(process.cwd(), "data");
+
+  try {
+    fs.mkdirSync(localDataDir, { recursive: true });
+
+    return path.join(localDataDir, fileName);
+  } catch {
+    const tmpDir =
+      process.env.TMPDIR ?? process.env.TEMP ?? process.env.TMP ?? "/tmp";
+
+    fs.mkdirSync(tmpDir, { recursive: true });
+
+    return path.join(tmpDir, fileName);
+  }
+}
+
 function getDatabase() {
   if (!globalForDb.__inscricaoDb) {
-    const dataDir = path.join(process.cwd(), "data");
-
-    if (!fs.existsSync(dataDir)) {
-      fs.mkdirSync(dataDir, { recursive: true });
-    }
-
-    const dbPath = path.join(dataDir, "inscricoes.db");
+    const dbPath = getWritableDbPath();
     const db = new Database(dbPath);
 
     db.exec(`
