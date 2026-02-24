@@ -95,7 +95,7 @@ function isKvConfigured() {
   return Boolean(process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN);
 }
 
-async function runKvCommand(command: Array<string>) {
+async function runKvCommand(command: Array<string | number>) {
   const url = process.env.KV_REST_API_URL;
   const token = process.env.KV_REST_API_TOKEN;
 
@@ -109,12 +109,13 @@ async function runKvCommand(command: Array<string>) {
       Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ command }),
+    body: JSON.stringify(command),
     cache: "no-store",
   });
 
   if (!response.ok) {
-    throw new Error("Falha ao acessar o KV.");
+    const resposta = await response.text();
+    throw new Error(`Falha ao acessar o KV (${response.status}): ${resposta}`);
   }
 
   const data = (await response.json()) as {
