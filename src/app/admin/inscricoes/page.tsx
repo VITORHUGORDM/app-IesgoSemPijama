@@ -1,9 +1,20 @@
 import { listarInscricoes } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
+export const runtime = "nodejs";
 
 export default async function AdminInscricoesPage() {
-  const inscricoes = await listarInscricoes();
+  let inscricoes = [] as Awaited<ReturnType<typeof listarInscricoes>>;
+  let erroCarregamento = "";
+
+  try {
+    inscricoes = await listarInscricoes();
+  } catch (error) {
+    erroCarregamento =
+      error instanceof Error
+        ? error.message
+        : "Não foi possível carregar as inscrições.";
+  }
 
   return (
     <main className="min-h-screen bg-black text-white px-4 py-10">
@@ -15,6 +26,9 @@ export default async function AdminInscricoesPage() {
           <p className="text-purple-200">
             Total de inscritos: <strong>{inscricoes.length}</strong>
           </p>
+          {erroCarregamento ? (
+            <p className="text-amber-300 text-sm">{erroCarregamento}</p>
+          ) : null}
         </header>
 
         <section className="border border-purple-500/30 rounded-2xl overflow-hidden bg-black/60">

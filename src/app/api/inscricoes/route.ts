@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { criarInscricao, listarInscricoes } from "@/lib/db";
 
+export const runtime = "nodejs";
+
 function isEmailValido(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
@@ -13,9 +15,11 @@ export async function GET() {
       total: inscricoes.length,
       inscritos: inscricoes,
     });
-  } catch {
+  } catch (error) {
+    const mensagemErro = error instanceof Error ? error.message : "";
+
     return NextResponse.json(
-      { erro: "Não foi possível listar os inscritos." },
+      { erro: mensagemErro || "Não foi possível listar os inscritos." },
       { status: 500 },
     );
   }
@@ -49,15 +53,25 @@ export async function POST(request: Request) {
   } catch (error) {
     const mensagemErro =
       error instanceof Error ? error.message.toLowerCase() : "";
+    const storageNaoConfigurado = mensagemErro.includes(
+      "persistência não configurada",
+    );
+
     const emailDuplicado =
       mensagemErro.includes("unique") ||
       mensagemErro.includes("constraint failed");
 
-    const mensagem = emailDuplicado
-      ? "Este e-mail já está inscrito."
-      : "Não foi possível registrar a inscrição.";
+    const mensagem = storageNaoConfigurado
+      ? "Persistência não configurada no deploy. Configure Vercel KV."
+      : emailDuplicado
+        ? "Este e-mail já está inscrito."
+        : "Não foi possível registrar a inscrição.";
 
-    const status = mensagem.includes("já está") ? 409 : 500;
+    const status = storageNaoConfigurado
+      ? 503
+      : mensagem.includes("já está")
+        ? 409
+        : 500;
 
     return NextResponse.json({ erro: mensagem }, { status });
   }

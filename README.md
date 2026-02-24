@@ -116,3 +116,19 @@ Dicas adicionais
 Contato
 
     lads@iesgo.edu.br
+
+Persistência no Deploy (Vercel)
+
+No ambiente de produção da Vercel, o sistema de arquivos local é efêmero.
+Para que as inscrições não sejam perdidas e apareçam em /admin/inscricoes, configure um banco persistente via Vercel KV.
+
+Passos:
+
+1. No painel da Vercel, adicione o storage **KV** ao projeto.
+2. Garanta as variáveis de ambiente em Production:
+   - `KV_REST_API_URL`
+   - `KV_REST_API_TOKEN`
+     (também funciona com `UPSTASH_REDIS_REST_URL` e `UPSTASH_REDIS_REST_TOKEN`)
+3. Faça um novo deploy.
+
+Sem KV configurado em produção, a API retorna erro de configuração de persistência.

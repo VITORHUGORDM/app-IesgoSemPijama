@@ -11,6 +11,14 @@ type GlobalWithDb = typeof globalThis & {
 
 const globalForDb = globalThis as GlobalWithDb;
 
+function isVercelProduction() {
+  return process.env.VERCEL === "1" && process.env.NODE_ENV === "production";
+}
+
+function getStorageConfigError() {
+  return "Persistência não configurada no deploy. Configure Vercel KV (KV_REST_API_URL e KV_REST_API_TOKEN).";
+}
+
 function getTmpDir() {
   return (
     process.env.TMPDIR ?? process.env.TEMP ?? process.env.TMP ?? os.tmpdir()
@@ -184,6 +192,10 @@ export async function criarInscricao(nome: string, email: string) {
     return criarInscricaoKv(nome, email);
   }
 
+  if (isVercelProduction()) {
+    throw new Error(getStorageConfigError());
+  }
+
   const db = getDatabase();
   const statement = db.prepare(
     "INSERT INTO inscricoes (nome, email) VALUES (?, ?)",
@@ -195,6 +207,10 @@ export async function criarInscricao(nome: string, email: string) {
 export async function listarInscricoes() {
   if (isKvConfigured()) {
     return listarInscricoesKv();
+  }
+
+  if (isVercelProduction()) {
+    throw new Error(getStorageConfigError());
   }
 
   const db = getDatabase();
