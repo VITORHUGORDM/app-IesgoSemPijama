@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 
 const SCHEDULE_DATA = {
-  sabado: [
+  quinta: [
     { time: "22:30", title: "Credenciamento & Welcome Kit", type: "Geral" },
     {
       time: "23:30",
@@ -15,14 +15,14 @@ const SCHEDULE_DATA = {
       type: "Atividade",
     },
   ],
-  domingo: [
+  sexta: [
     { time: "04:00", title: "Coffee Break & Networking", type: "Intervalo" },
     { time: "07:30", title: "Premiação & Encerramento", type: "Main Stage" },
   ],
 };
 
 export default function Schedule() {
-  const [activeTab, setActiveTab] = useState<"sabado" | "domingo">("sabado");
+  const [activeTab, setActiveTab] = useState<"quinta" | "sexta">("quinta");
 
   return (
     <section
@@ -39,16 +39,16 @@ export default function Schedule() {
 
         <div className="flex justify-center mb-12 space-x-4">
           <button
-            onClick={() => setActiveTab("sabado")}
-            className={`px-8 py-2 rounded-full font-bold transition ${activeTab === "sabado" ? "bg-purple-600 text-white" : "bg-zinc-800 text-gray-400"}`}
+            onClick={() => setActiveTab("quinta")}
+            className={`px-8 py-2 rounded-full font-bold transition ${activeTab === "quinta" ? "bg-purple-600 text-white" : "bg-zinc-800 text-gray-400"}`}
           >
-            SÁBADO
+            QUINTA
           </button>
           <button
-            onClick={() => setActiveTab("domingo")}
-            className={`px-8 py-2 rounded-full font-bold transition ${activeTab === "domingo" ? "bg-purple-600 text-white" : "bg-zinc-800 text-gray-400"}`}
+            onClick={() => setActiveTab("sexta")}
+            className={`px-8 py-2 rounded-full font-bold transition ${activeTab === "sexta" ? "bg-purple-600 text-white" : "bg-zinc-800 text-gray-400"}`}
           >
-            DOMINGO
+            SEXTA
           </button>
         </div>
 

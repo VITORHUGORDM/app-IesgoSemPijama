@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import Header from "../app/componentes/Header";
-import CartSidebar from "../app/componentes/Cartsidebar";
 import Hero from "../app/componentes/Hero";
 import InfoCards from "../app/componentes/InfoCards";
 import Countdown from "../app/componentes/Countdown";
@@ -10,44 +9,21 @@ import Purpose from "../app/componentes/Purpose";
 import EditionThemes from "../app/componentes/EditionThemes";
 import History from "../app/componentes/History";
 import Gallery from "../app/componentes/Gallery";
-import VipGroup from "../app/componentes/VipGroup";
 import Speakers from "../app/componentes/Speakers";
 import Schedule from "../app/componentes/Schedule";
 import Store from "../app/componentes/Store";
-import Pricing from "../app/componentes/Pricing";
 import Faq from "../app/componentes/Faq";
 import Footer from "../app/componentes/Footer";
 import LocationMap from "../app/componentes/LocationMap";
 import Partners from "../app/componentes/Partners";
 import Contact from "../app/componentes/Contact";
+import Group from "./componentes/Group";
 
 export default function Home() {
-  const [cartOpen, setCartOpen] = useState(false);
-  const [cart, setCart] = useState<
-    { id: number; name: string; price: number }[]
-  >([]);
-
-  const addToCart = (product: { id: number; name: string; price: number }) => {
-    setCart([...cart, product]);
-    setCartOpen(true);
-  };
-
-  const removeFromCart = (index: number) => {
-    const newCart = [...cart];
-    newCart.splice(index, 1);
-    setCart(newCart);
-  };
-
   return (
     <main className="min-h-screen bg-black font-sans selection:bg-purple-500 selection:text-white">
-      {/* Cabeçalho e Gerenciamento do Carrinho */}
-      <Header cartCount={cart.length} onOpenCart={() => setCartOpen(true)} />
-      <CartSidebar
-        isOpen={cartOpen}
-        onClose={() => setCartOpen(false)}
-        cart={cart}
-        onRemoveItem={removeFromCart}
-      />
+      {/* Cabeçalho */}
+      <Header />
       {/* Conteúdo da Página */}
       <Hero />
       <InfoCards />
@@ -58,9 +34,8 @@ export default function Home() {
       <Gallery />
       <Speakers />
       <Schedule />
-      <Store onAddToCart={addToCart} />
-      <Pricing />
-      <VipGroup />
+      <Store />
+      <Group />
       <Partners />
       <LocationMap />
       <Faq />

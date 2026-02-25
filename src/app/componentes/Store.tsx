@@ -1,5 +1,4 @@
 import React from "react";
-import { ShoppingCart } from "lucide-react";
 
 interface Product {
   id: number;
@@ -12,28 +11,24 @@ const PRODUCTS: Product[] = [
   {
     id: 1,
     name: "Camiseta IESGO 2026",
-    price: 45.0,
+    price: 100.0,
     image: "/api/placeholder/200/200",
   },
   {
     id: 2,
-    name: "Produto Aleatorio iesgo",
-    price: 120.0,
+    name: "Caneca IESGO 2026",
+    price: 60.0,
     image: "/api/placeholder/200/200",
   },
   {
     id: 3,
-    name: "Produto Exclusivo 2026",
-    price: 850.0,
+    name: "Moletom IESGO",
+    price: 100.0,
     image: "/api/placeholder/200/200",
   },
 ];
 
-export default function Store({
-  onAddToCart,
-}: {
-  onAddToCart: (p: Product) => void;
-}) {
+export default function Store() {
   return (
     <section
       id="loja"
@@ -45,12 +40,9 @@ export default function Store({
             PIJAMA <span className="text-purple-500">LOJA</span>
           </h2>
           <p className="text-gray-400 mt-2">
-            Garanta os itens exclusivos da edição 2026.
+            Informaçoes para loja que estara no stand do evento.
           </p>
         </div>
-        <button className="hidden md:block text-purple-400 font-bold hover:text-purple-300">
-          VER CATÁLOGO COMPLETO →
-        </button>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -73,12 +65,6 @@ export default function Store({
                 <span className="text-xl font-bold text-white">
                   R$ {prod.price.toFixed(2)}
                 </span>
-                <button
-                  onClick={() => onAddToCart(prod)}
-                  className="bg-white text-black px-4 py-2 rounded-lg font-bold hover:bg-gray-300 transition text-sm flex gap-2 items-center"
-                >
-                  <ShoppingCart size={16} /> Add
-                </button>
               </div>
             </div>
           </div>

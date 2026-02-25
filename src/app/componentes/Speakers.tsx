@@ -3,19 +3,23 @@ import React from "react";
 const SPEAKERS = [
   {
     name: "Palestrante 1",
-    role: "CEO da Empresa X",
-    topic: "O Futuro da IA Generativa",
-  },
-  {
-    name: "Palestrante 2",
-    role: "Funçao na sua area",
+    role: "A ser anunciado",
     topic: "topico a ser apresentado",
   },
   {
-    name: "Palestrante 3",
-    role: "Engenheiro de Software",
-    topic:
-      "Como a IA Generativa está Transformando o Desenvolvimento de Software",
+    name: "Palestrante 2",
+    role: "A ser anunciado",
+    topic: "topico a ser apresentado",
+  },
+  {
+    name: "Oficina 1",
+    role: "A ser anunciado",
+    topic: "topico a ser apresentado",
+  },
+  {
+    name: "Oficina 2",
+    role: "A ser anunciado",
+    topic: "topico a ser apresentado",
   },
 ];
 
@@ -34,7 +38,7 @@ export default function Speakers() {
     text-transparent 
     animate-gradient"
         >
-          CONVIDADOS
+          OFICINAS
         </span>
       </h2>
       <div className="grid md:grid-cols-3 gap-8">
@@ -45,16 +49,17 @@ export default function Speakers() {
           >
             <div className="h-64 bg-zinc-800 relative">
               <div className="w-full h-full flex items-center justify-center text-zinc-600 bg-zinc-800">
-                <span className="text-4xl font-bold opacity-20">FOTO</span>
+                <span className="text-4xl font-bold opacity-20">
+                  <img src="" alt="" />
+                  EM BREVE
+                </span>
               </div>
             </div>
             <div className="p-6">
               <h3 className="text-xl font-bold text-white">{speaker.name}</h3>
               <p className="text-purple-400 text-sm mb-4">{speaker.role}</p>
               <div className="border-t border-white/5 pt-4 mt-2">
-                <p className="text-gray-300 text-sm italic">
-                  &quot;{speaker.topic}&quot;
-                </p>
+                <p className="text-gray-300 text-sm italic">{speaker.topic}</p>
               </div>
             </div>
           </div>
