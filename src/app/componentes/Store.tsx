@@ -61,7 +61,12 @@ export default function Store() {
           >
             <div
               className="h-64 flex items-center justify-center text-gray-500 cursor-pointer relative bg-cover bg-center"
-              style={{ backgroundImage: "url('/fundo.PNG')" }}
+              style={{
+                backgroundImage:
+                  prod.id === 2
+                    ? "linear-gradient(135deg, #4a0080 0%, #1a0033 100%)"
+                    : "url('/fundo.PNG')",
+              }}
             >
               <img
                 src={prod.img}

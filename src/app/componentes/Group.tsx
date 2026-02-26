@@ -24,11 +24,8 @@ export default function Group() {
               fazer parte dessa comunidade especial!
             </p>
             <button className="bg-linear-to-r from-purple-600 to-pink-600 text-white font-bold py-4 px-10 rounded-full text-lg hover:scale-105 transition">
-              <Link
-                href="https://chat.whatsapp.com/JlNOJ1DannTEdijHVtLUUT?mode=gi_t"
-                target="_blank"
-              >
-                ENTRAR NO GRUPO
+              <Link href="" target="_blank">
+                EM BREVE
               </Link>
             </button>
           </div>
@@ -36,8 +33,8 @@ export default function Group() {
           {/* Coluna Direita - QR Code */}
           <div className="flex-shrink-0">
             <img
-              src="/qr-code.jpeg"
-              alt="QR CODE para o grupo"
+              src=""
+              alt="QR CODE para o grupo em breve"
               className="w-64 md:w-72 rounded-lg shadow-lg"
             />
           </div>
