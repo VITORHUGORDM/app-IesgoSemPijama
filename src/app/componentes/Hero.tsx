@@ -7,11 +7,8 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/80 bg-linear-to-t from-black via-black/80 to-transparent"></div>
 
       <div className="relative z-10 max-w-4xl mx-auto space-y-6 text-white">
-        <h1 className="text-5xl md:text-8xl font-black tracking-tighter uppercase mb-4">
-          Iesgo Sem{" "}
-          <span className="text-transparent bg-clip-text bg-linear-to-r from-purple-500 to-pink-500">
-            PIJAMA
-          </span>
+        <h1 className="text-6xl md:text-9xl font-black tracking-tighter uppercase mb-4 neon-text">
+          Iesgo Sem <span className="neon-pink">PIJAMA</span>
         </h1>
         <p className="text-xl md:text-2xl text-purple-200 font-medium tracking-wide">
           À NOITE FAZEMOS PROGRAMA

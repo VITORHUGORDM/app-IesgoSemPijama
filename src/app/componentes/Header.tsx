@@ -20,11 +20,9 @@ export default function Header() {
   return (
     <header className="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
       <div className="container mx-auto px-4 py-8 flex justify-center items-center">
-        <div className="absolute left-4 text-2xl font-bold tracking-tighter text-white flex items-center gap-2">
-          IESGO SEM{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">
-            PIJAMA
-          </span>
+        <div className="absolute left-4 text-4xl font-bold tracking-tighter flex items-center gap-2">
+          <span className="neon-text">IESGO SEM</span>{" "}
+          <span className="neon-pink">PIJAMA</span>
         </div>
         <nav className="hidden md:flex space-x-8 text-sm font-medium text-gray-300">
           <a
