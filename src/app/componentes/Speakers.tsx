@@ -5,14 +5,14 @@ const SPEAKERS = [
   {
     name: "João Pedro Gress",
     role: "Cyber Security Specialist",
-    topic: "topico a ser apresentado",
+    topic: "Segurança Cibernética: Protegendo o Futuro Digital",
     imageSrc: "/FotoGress.jpg",
   },
   {
     name: "Danúbia Santos",
     role: "Scrum Master",
-    topic: "topico a ser apresentado",
-    imageSrc: "/FotoDanubia.jpg",
+    topic: "Scrum: Metodologia Ágil para Desenvolvimento de Software",
+    imageSrc: "/FotoDanubia.jpeg",
   },
   {
     name: "Kaic Marçal",
@@ -24,7 +24,7 @@ const SPEAKERS = [
     name: "Oficina 2",
     role: "A ser anunciado",
     topic: "topico a ser apresentado",
-    imageSrc: "/speakers/oficina-2.jpg",
+    imageSrc: "/oficina-2.jpg",
   },
 ];
 
