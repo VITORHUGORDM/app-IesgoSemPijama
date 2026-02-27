@@ -1,25 +1,30 @@
 import React from "react";
+import Image from "next/image";
 
 const SPEAKERS = [
   {
-    name: "Palestrante 1",
-    role: "A ser anunciado",
+    name: "João Pedro Gress",
+    role: "Cyber Security Specialist",
     topic: "topico a ser apresentado",
+    imageSrc: "/FotoGress.jpg",
   },
   {
-    name: "Palestrante 2",
-    role: "A ser anunciado",
+    name: "Danúbia Santos",
+    role: "Scrum Master",
     topic: "topico a ser apresentado",
+    imageSrc: "/FotoDanubia.jpg",
   },
   {
-    name: "Oficina 1",
-    role: "A ser anunciado",
-    topic: "topico a ser apresentado",
+    name: "Kaic Marçal",
+    role: "Student SI",
+    topic: "Oficina de arduino",
+    imageSrc: "/FotoMarcal.jpeg",
   },
   {
     name: "Oficina 2",
     role: "A ser anunciado",
     topic: "topico a ser apresentado",
+    imageSrc: "/speakers/oficina-2.jpg",
   },
 ];
 
@@ -47,15 +52,17 @@ export default function Speakers() {
             key={idx}
             className="group relative overflow-hidden rounded-xl bg-zinc-900 border border-white/5 transition-all duration-300 hover:scale-105 transform hover:border-purple-500 hover:shadow-[0_0_28px_rgba(168,85,247,0.55)]"
           >
-            <div className="h-64 bg-zinc-800 relative">
-              <div className="w-full h-full flex items-center justify-center text-zinc-600 bg-zinc-800">
-                <span className="text-4xl font-bold opacity-20">
-                  <img src="" alt="" />
-                  EM BREVE
-                </span>
-              </div>
+            <div className="h-80 bg-zinc-800 relative">
+              <Image
+                src={speaker.imageSrc}
+                alt={`Foto de ${speaker.name}`}
+                fill
+                sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
+                quality={90}
+                className="object-cover"
+              />
             </div>
-            <div className="p-6">
+            <div className="p-8">
               <h3 className="text-xl font-bold text-white">{speaker.name}</h3>
               <p className="text-purple-400 text-sm mb-4">{speaker.role}</p>
               <div className="border-t border-white/5 pt-4 mt-2">
