@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 
 interface Product {
   id: number;
@@ -61,17 +62,26 @@ export default function Store() {
           >
             <div
               className="h-64 flex items-center justify-center text-gray-500 cursor-pointer relative bg-cover bg-center"
-              style={{ backgroundImage: "url('/fundo.PNG')" }}
+              style={{
+                backgroundImage:
+                  prod.id === 2
+                    ? "linear-gradient(135deg, #4a0080 0%, #1a0033 100%)"
+                    : "url('/fundo.PNG')",
+              }}
             >
-              <img
+              <Image
                 src={prod.img}
                 alt={prod.name}
-                className="w-full h-full object-contain hover:scale-105 transition relative z-10"
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="object-contain hover:scale-105 transition relative z-10 cursor-pointer"
                 onClick={() => {
                   setCurrentProduct(prod);
                   setSelectedImage(prod.img);
                   setIsFlipped(false);
                 }}
+                quality={80}
+                loading="lazy"
               />
             </div>
             <div className="p-6">
@@ -105,15 +115,21 @@ export default function Store() {
             className="relative max-w-4xl max-h-[90vh] flex flex-col items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
-            <img
-              src={
-                isFlipped && currentProduct.imgBack
-                  ? currentProduct.imgBack
-                  : selectedImage
-              }
-              alt="Imagem ampliada"
-              className="max-w-full max-h-[80vh] object-contain"
-            />
+            <div className="relative w-full h-[80vh]">
+              <Image
+                src={
+                  isFlipped && currentProduct.imgBack
+                    ? currentProduct.imgBack
+                    : selectedImage
+                }
+                alt="Imagem ampliada"
+                fill
+                sizes="90vw"
+                className="object-contain"
+                quality={90}
+                priority
+              />
+            </div>
 
             {/* Botão para virar para as costas */}
             {currentProduct.imgBack && (

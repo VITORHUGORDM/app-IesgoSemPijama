@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Group() {
   return (
@@ -34,11 +35,15 @@ export default function Group() {
           </div>
 
           {/* Coluna Direita - QR Code */}
-          <div className="flex-shrink-0">
-            <img
+          <div className="flex-shrink-0 relative w-64 md:w-72 h-64 md:h-72">
+            <Image
               src="/qr-code.jpeg"
               alt="QR CODE para o grupo"
-              className="w-64 md:w-72 rounded-lg shadow-lg"
+              fill
+              sizes="(max-width: 768px) 256px, 288px"
+              className="rounded-lg shadow-lg object-contain"
+              quality={85}
+              loading="lazy"
             />
           </div>
         </div>

@@ -1,23 +1,46 @@
-"use client";
-
-import React, { useState } from "react";
+import dynamic from "next/dynamic";
 import Header from "../app/componentes/Header";
 import Hero from "../app/componentes/Hero";
 import InfoCards from "../app/componentes/InfoCards";
-import Countdown from "../app/componentes/Countdown";
-import Purpose from "../app/componentes/Purpose";
-import EditionThemes from "../app/componentes/EditionThemes";
-import History from "../app/componentes/History";
-import Gallery from "../app/componentes/Gallery";
-import Speakers from "../app/componentes/Speakers";
-import Schedule from "../app/componentes/Schedule";
-import Store from "../app/componentes/Store";
-import Faq from "../app/componentes/Faq";
-import Footer from "../app/componentes/Footer";
-import LocationMap from "../app/componentes/LocationMap";
-import Partners from "../app/componentes/Partners";
-import Contact from "../app/componentes/Contact";
-import Group from "./componentes/Group";
+
+// Lazy load componentes abaixo da dobra
+const Countdown = dynamic(() => import("../app/componentes/Countdown"), {
+  ssr: true,
+});
+const Purpose = dynamic(() => import("../app/componentes/Purpose"), {
+  ssr: true,
+});
+const EditionThemes = dynamic(
+  () => import("../app/componentes/EditionThemes"),
+  { ssr: true },
+);
+const History = dynamic(() => import("../app/componentes/History"), {
+  ssr: true,
+});
+const Gallery = dynamic(() => import("../app/componentes/Gallery"), {
+  ssr: true,
+});
+const Speakers = dynamic(() => import("../app/componentes/Speakers"), {
+  ssr: true,
+});
+const Schedule = dynamic(() => import("../app/componentes/Schedule"), {
+  ssr: true,
+});
+const Store = dynamic(() => import("../app/componentes/Store"), { ssr: true });
+const Group = dynamic(() => import("./componentes/Group"), { ssr: true });
+const Partners = dynamic(() => import("../app/componentes/Partners"), {
+  ssr: true,
+});
+const LocationMap = dynamic(() => import("../app/componentes/LocationMap"), {
+  ssr: true,
+});
+const Faq = dynamic(() => import("../app/componentes/Faq"), { ssr: true });
+const Contact = dynamic(() => import("../app/componentes/Contact"), {
+  ssr: true,
+});
+const Footer = dynamic(() => import("../app/componentes/Footer"), {
+  ssr: true,
+});
 
 export default function Home() {
   return (

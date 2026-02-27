@@ -5,7 +5,7 @@ const SPEAKERS = [
   {
     name: "João Pedro Gress",
     role: "Cyber Security Specialist",
-    topic: "Segurança Cibernética: Protegendo o Futuro Digital",
+    topic: "OSINT: A Arte de Coletar Informações na Era Digital",
     imageSrc: "/FotoGress.jpg",
   },
   {
@@ -58,8 +58,9 @@ export default function Speakers() {
                 alt={`Foto de ${speaker.name}`}
                 fill
                 sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
-                quality={90}
+                quality={80}
                 className="object-cover"
+                loading="lazy"
               />
             </div>
             <div className="p-8">

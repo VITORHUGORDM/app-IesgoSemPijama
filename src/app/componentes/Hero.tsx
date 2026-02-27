@@ -1,9 +1,22 @@
+import Image from "next/image";
+
 export default function Hero() {
   return (
     <section
       id="home"
-      className="relative pt-32 pb-20 px-4 flex flex-col items-center justify-center text-center min-h-[90vh] bg-[url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2070')] bg-cover bg-center"
+      className="relative pt-32 pb-20 px-4 flex flex-col items-center justify-center text-center min-h-[90vh]"
     >
+      {/* Imagem de fundo otimizada */}
+      <Image
+        src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2070"
+        alt="Background do evento"
+        fill
+        priority
+        quality={85}
+        sizes="100vw"
+        className="object-cover"
+      />
+
       <div className="absolute inset-0 bg-black/80 bg-linear-to-t from-black via-black/80 to-transparent"></div>
 
       <div className="relative z-10 max-w-4xl mx-auto space-y-6 text-white">
