@@ -15,7 +15,22 @@ export default function Gallery() {
     },
     {
       src: "",
-      edition: "Edicao 2026",
+      edition: "Edicao 2025",
+      caption: "a tratar",
+    },
+    {
+      src: "",
+      edition: "Edicao 2025",
+      caption: "a tratar",
+    },
+    {
+      src: "",
+      edition: "Edicao 2025",
+      caption: "a tratar",
+    },
+    {
+      src: "",
+      edition: "Edicao 2025",
       caption: "a tratar",
     },
   ];

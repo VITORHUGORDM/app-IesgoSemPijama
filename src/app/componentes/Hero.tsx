@@ -39,7 +39,7 @@ export default function Hero() {
             href="#contato"
             className="bg-linear-to-r from-purple-600 to-pink-600 text-white font-bold py-4 px-10 rounded-full text-lg hover:scale-105 transition transform shadow-[0_0_20px_rgba(168,85,247,0.5)]"
           >
-            FALE CONOSCO
+            Faça sua pré-inscrição
           </a>
         </div>
       </div>

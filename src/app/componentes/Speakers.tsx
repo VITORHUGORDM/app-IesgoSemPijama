@@ -5,8 +5,8 @@ const SPEAKERS = [
   {
     name: "João Pedro Gress",
     role: "Cyber Security Specialist",
-    topic: "OSINT: A Arte de Coletar Informações na Era Digital",
-    imageSrc: "/FotoGress.jpg",
+    topic: "Você é um Alvo: Como Informações Públicas Viram Inteligência",
+    imageSrc: "/FotoGress.jpeg",
   },
   {
     name: "Danúbia Santos",
@@ -21,7 +21,7 @@ const SPEAKERS = [
     imageSrc: "/FotoMarcal.jpeg",
   },
   {
-    name: "Oficina 2",
+    name: "palestrante",
     role: "A ser anunciado",
     topic: "topico a ser apresentado",
     imageSrc: "/oficina-2.jpg",
@@ -52,13 +52,13 @@ export default function Speakers() {
             key={idx}
             className="group relative overflow-hidden rounded-xl bg-zinc-900 border border-white/5 transition-all duration-300 hover:scale-105 transform hover:border-purple-500 hover:shadow-[0_0_28px_rgba(168,85,247,0.55)]"
           >
-            <div className="h-80 bg-zinc-800 relative">
+            <div className="h-80 md:h-88 lg:h-96 bg-zinc-800 relative">
               <Image
                 src={speaker.imageSrc}
                 alt={`Foto de ${speaker.name}`}
                 fill
                 sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
-                quality={80}
+                quality={90}
                 className="object-cover"
                 loading="lazy"
               />

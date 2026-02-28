@@ -1,5 +1,6 @@
 import React from "react";
-import { Instagram, Facebook, Twitter } from "lucide-react";
+import { Instagram, Twitter } from "lucide-react";
+import { FaTiktok } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -7,22 +8,18 @@ export default function Footer() {
       <div className="container mx-auto px-4 text-center">
         <div className="flex justify-center gap-6 mb-8">
           <a
-            href="#"
+            href="https://www.instagram.com/iesgosempijama?igsh=czU1bDZlc3psMDF1&utm_source=qr"
             className="w-12 h-12 rounded-full bg-zinc-900 flex items-center justify-center hover:bg-purple-600 transition text-white"
+            target="_blank"
           >
             <Instagram size={20} />
           </a>
           <a
-            href="#"
+            href="https://www.tiktok.com/@iesgosempijama?_r=1&_t=ZS-93tijdp8qzl"
             className="w-12 h-12 rounded-full bg-zinc-900 flex items-center justify-center hover:bg-blue-600 transition text-white"
+            target="_blank"
           >
-            <Facebook size={20} />
-          </a>
-          <a
-            href="#"
-            className="w-12 h-12 rounded-full bg-zinc-900 flex items-center justify-center hover:bg-sky-500 transition text-white"
-          >
-            <Twitter size={20} />
+            <FaTiktok size={20} />
           </a>
         </div>
 
